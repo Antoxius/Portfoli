@@ -20,41 +20,34 @@ const contactSchema = z.object({
     .max(2000, "Message is too long (max 2000 characters)"),
 });
 
-type ContactForm = z.infer<typeof contactSchema>;
-type FieldErrors = Partial<Record<keyof ContactForm, string>>;
-type Status = "idle" | "success" | "error";
-
 export default function ContactPage() {
-  const [form, setForm] = useState<ContactForm>({
+  const [form, setForm] = useState({
     name: "",
     email: "",
     subject: "",
     message: "",
   });
-  const [errors, setErrors] = useState<FieldErrors>({});
-  const [status, setStatus] = useState<Status>("idle");
+  const [errors, setErrors] = useState({});
+  const [status, setStatus] = useState("idle");
   const [loading, setLoading] = useState(false);
 
-  function handleChange(
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) {
+  function handleChange(e) {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
-    // Clear the field error on change
-    if (errors[name as keyof ContactForm]) {
+    if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: undefined }));
     }
   }
 
-  async function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e) {
     e.preventDefault();
     setStatus("idle");
 
     const result = contactSchema.safeParse(form);
     if (!result.success) {
-      const fieldErrors: FieldErrors = {};
+      const fieldErrors = {};
       result.error.issues.forEach((err) => {
-        const field = err.path[0] as keyof ContactForm;
+        const field = err.path[0];
         if (!fieldErrors[field]) fieldErrors[field] = err.message;
       });
       setErrors(fieldErrors);
