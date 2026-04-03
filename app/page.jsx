@@ -36,11 +36,11 @@ export default function Home() {
           Xenius <span className="text-[var(--accent)]">Tolderlund</span>
         </h1>
         <p className="text-xl md:text-2xl text-slate-400 max-w-2xl">
-          A full-stack developer passionate about building{" "}
+          A newly graduated front-end developer passionate about building{" "}
           <span className="text-[var(--foreground)] font-semibold">
-            functional and reliable
+            clean and engaging
           </span>{" "}
-          software that makes a difference.
+          web experiences.
         </p>
 
         <div className="flex flex-wrap gap-4 mt-2">
