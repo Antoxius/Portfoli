@@ -26,9 +26,11 @@ export default function ContactPage() {
     email: "",
     subject: "",
     message: "",
+    honeypot: "",
   });
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState("idle");
+  const [statusMessage, setStatusMessage] = useState("");
   const [loading, setLoading] = useState(false);
 
   function handleChange(e) {
@@ -42,6 +44,7 @@ export default function ContactPage() {
   async function handleSubmit(e) {
     e.preventDefault();
     setStatus("idle");
+    setStatusMessage("");
 
     const result = contactSchema.safeParse(form);
     if (!result.success) {
@@ -67,14 +70,17 @@ export default function ContactPage() {
 
       if (res.ok && data.success) {
         setStatus("success");
-        setForm({ name: "", email: "", subject: "", message: "" });
+        setStatusMessage(data.message || "Din besked er sendt.");
+        setForm({ name: "", email: "", subject: "", message: "", honeypot: "" });
       } else if (data.errors) {
         setErrors(data.errors);
         setStatus("idle");
       } else {
+        setStatusMessage(data.message || "Noget gik galt. Prøv venligst igen.");
         setStatus("error");
       }
     } catch {
+      setStatusMessage("Kunne ikke oprette forbindelse til serveren.");
       setStatus("error");
     } finally {
       setLoading(false);
@@ -96,7 +102,7 @@ export default function ContactPage() {
         <div className="flex items-center gap-3 p-4 mb-8 rounded-lg bg-green-900/30 border border-green-700 text-green-400">
           <FiCheckCircle size={20} />
           <span>
-            Din besked er sendt! Jeg vender tilbage snarest.
+            {statusMessage || "Din besked er sendt! Jeg vender tilbage snarest."}
           </span>
         </div>
       )}
@@ -104,7 +110,7 @@ export default function ContactPage() {
       {status === "error" && (
         <div className="flex items-center gap-3 p-4 mb-8 rounded-lg bg-red-900/30 border border-red-700 text-red-400">
           <FiAlertCircle size={20} />
-          <span>Noget gik galt. Prøv venligst igen.</span>
+          <span>{statusMessage || "Noget gik galt. Prøv venligst igen."}</span>
         </div>
       )}
 
@@ -185,6 +191,20 @@ export default function ContactPage() {
 
         {/* Message */}
         <div>
+          <label className="sr-only" htmlFor="honeypot">
+            Lad dette felt vaere tomt
+          </label>
+          <input
+            id="honeypot"
+            name="honeypot"
+            type="text"
+            tabIndex={-1}
+            autoComplete="off"
+            value={form.honeypot}
+            onChange={handleChange}
+            className="hidden"
+          />
+
           <label
             htmlFor="message"
             className="block text-sm font-medium text-slate-300 mb-1.5"

@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
+import { getPortfolioApiBaseUrl } from "@/lib/portfolio-api";
 
 const contactSchema = z.object({
   name: z
@@ -41,10 +42,56 @@ export async function POST(request) {
     );
   }
 
-  // Here you would send an email or save to a database.
-  // For now we return a successful acknowledgement.
-  return NextResponse.json(
-    { success: true, message: "Besked modtaget. Tak for din henvendelse!" },
-    { status: 200 }
-  );
+  const payload = {
+    ...result.data,
+    honeypot: typeof body?.honeypot === "string" ? body.honeypot : "",
+  };
+
+  try {
+    const response = await fetch(`${getPortfolioApiBaseUrl()}/api/contact`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+      cache: "no-store",
+    });
+
+    const data = await response.json().catch(() => ({}));
+
+    if (response.ok) {
+      return NextResponse.json(
+        {
+          success: true,
+          message: data.message || "Besked modtaget. Tak for din henvendelse!",
+        },
+        { status: 200 }
+      );
+    }
+
+    const fieldErrors = data?.details?.fieldErrors;
+    if (fieldErrors) {
+      return NextResponse.json(
+        { success: false, errors: fieldErrors },
+        { status: 422 }
+      );
+    }
+
+    return NextResponse.json(
+      {
+        success: false,
+        message: data.error || "Kunne ikke sende beskeden til API'et.",
+      },
+      { status: response.status || 502 }
+    );
+  } catch {
+    return NextResponse.json(
+      {
+        success: false,
+        message: "Forbindelsen til API'et fejlede. Prøv igen senere.",
+      },
+      { status: 502 }
+    );
+  }
+
 }
