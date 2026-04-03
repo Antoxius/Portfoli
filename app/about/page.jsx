@@ -35,18 +35,18 @@ export default function AboutPage() {
         <div className="space-y-5 text-slate-300 leading-relaxed">
           <p>
             Hi! I&apos;m <span className="text-white font-semibold">Xenius Tolderlund</span>,
-            a full-stack developer with a love for crafting clean, performant,
-            and maintainable applications.
+            a newly graduated front-end developer with a passion for crafting
+            clean, accessible, and visually engaging web experiences.
           </p>
           <p>
-            I specialize in building web applications using modern JavaScript
-            frameworks and TypeScript. I care deeply about code quality,
-            developer experience, and shipping software that actually works.
+            I focus on building modern user interfaces using React and Next.js,
+            with a strong eye for design and a commitment to writing
+            maintainable, well-structured code.
           </p>
           <p>
-            When I&apos;m not coding, you can find me exploring new technologies,
-            contributing to open-source projects, or enjoying a good cup of
-            coffee.
+            When I&apos;m not coding, you can find me exploring new front-end
+            tools and frameworks, working on personal projects, or enjoying a
+            good cup of coffee.
           </p>
           <a
             href="/cv.pdf"
@@ -84,21 +84,21 @@ export default function AboutPage() {
           {[
             {
               year: "2024 – Present",
-              title: "Full-Stack Developer",
+              title: "Front-End Developer",
               org: "Freelance",
-              desc: "Building web applications for clients using Next.js, TypeScript, and PostgreSQL.",
+              desc: "Building responsive websites and UI components for clients using React, Next.js, and Tailwind CSS.",
             },
             {
               year: "2023 – 2024",
-              title: "Junior Developer",
-              org: "Tech Startup",
-              desc: "Developed React front-ends and Node.js REST APIs in an agile team.",
+              title: "Front-End Internship",
+              org: "Web Agency",
+              desc: "Assisted in developing and maintaining client websites, focusing on HTML, CSS, JavaScript, and React.",
             },
             {
-              year: "2021 – 2023",
-              title: "Computer Science Studies",
+              year: "2021 – 2024",
+              title: "Front-End Development Studies",
               org: "University",
-              desc: "Studied algorithms, data structures, software engineering, and databases.",
+              desc: "Graduated with a degree focused on web development, UI/UX principles, and modern JavaScript frameworks.",
             },
           ].map(({ year, title, org, desc }) => (
             <li key={year} className="ml-6">
