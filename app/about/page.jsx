@@ -27,26 +27,26 @@ export default function AboutPage() {
       {/* Header */}
       <div className="flex items-center gap-3 mb-10">
         <FiUser className="text-[var(--accent)]" size={24} />
-        <h1 className="text-3xl font-bold">About Me</h1>
+        <h1 className="text-3xl font-bold">Om mig</h1>
       </div>
 
       <div className="grid md:grid-cols-2 gap-12">
         {/* Bio */}
         <div className="space-y-5 text-slate-300 leading-relaxed">
           <p>
-            Hi! I&apos;m <span className="text-white font-semibold">Xenius Tolderlund</span>,
-            a newly graduated front-end developer with a passion for crafting
-            clean, accessible, and visually engaging web experiences.
+            Hej! Jeg er <span className="text-white font-semibold">Xenius Tolderlund</span>,
+            nyuddannet frontend-udvikler med en passion for at skabe
+            rene, tilgængelige og visuelt engagerende weboplevelser.
           </p>
           <p>
-            I focus on building modern user interfaces using React and Next.js,
-            with a strong eye for design and a commitment to writing
-            maintainable, well-structured code.
+            Jeg fokuserer på at bygge moderne brugergrænseflader med React og Next.js,
+            med et stærkt blik for design og en forpligtelse til at skrive
+            vedligeholdelsesvenlig og velstruktureret kode.
           </p>
           <p>
-            When I&apos;m not coding, you can find me exploring new front-end
-            tools and frameworks, working on personal projects, or enjoying a
-            good cup of coffee.
+            Når jeg ikke koder, bruger jeg tiden på at udforske nye frontend-
+            værktøjer og frameworks, arbejde på personlige projekter eller nyde
+            en god kop kaffe.
           </p>
           <a
             href="/cv.pdf"
@@ -60,7 +60,7 @@ export default function AboutPage() {
         {/* Skills grid */}
         <div>
           <h2 className="text-xl font-semibold mb-6 text-white">
-            Technologies I Work With
+            Teknologier jeg arbejder med
           </h2>
           <div className="grid grid-cols-4 gap-4">
             {techStack.map(({ icon: Icon, label }) => (
@@ -79,26 +79,26 @@ export default function AboutPage() {
 
       {/* Timeline */}
       <div className="mt-16">
-        <h2 className="text-xl font-semibold mb-8 text-white">Experience</h2>
+        <h2 className="text-xl font-semibold mb-8 text-white">Erfaring</h2>
         <ol className="relative border-l border-[var(--border)] space-y-8 ml-4">
           {[
             {
-              year: "2024 – Present",
-              title: "Front-End Developer",
+              year: "2024 – Nu",
+              title: "Frontend-udvikler",
               org: "Freelance",
-              desc: "Building responsive websites and UI components for clients using React, Next.js, and Tailwind CSS.",
+              desc: "Bygger responsive hjemmesider og UI-komponenter til kunder ved hjælp af React, Next.js og Tailwind CSS.",
             },
             {
               year: "2023 – 2024",
-              title: "Front-End Internship",
-              org: "Web Agency",
-              desc: "Assisted in developing and maintaining client websites, focusing on HTML, CSS, JavaScript, and React.",
+              title: "Frontend-praktik",
+              org: "Webbureau",
+              desc: "Hjalp med at udvikle og vedligeholde kunders hjemmesider med fokus på HTML, CSS, JavaScript og React.",
             },
             {
               year: "2021 – 2024",
-              title: "Front-End Development Studies",
-              org: "University",
-              desc: "Graduated with a degree focused on web development, UI/UX principles, and modern JavaScript frameworks.",
+              title: "Frontend-uddannelse",
+              org: "Universitet",
+              desc: "Dimitterede med en uddannelse med fokus på webudvikling, UI/UX-principper og moderne JavaScript-frameworks.",
             },
           ].map(({ year, title, org, desc }) => (
             <li key={year} className="ml-6">

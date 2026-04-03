@@ -6,10 +6,10 @@ import { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 
 const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/projects", label: "Projects" },
-  { href: "/contact", label: "Contact" },
+  { href: "/", label: "Hjem" },
+  { href: "/about", label: "Om mig" },
+  { href: "/projects", label: "Projekter" },
+  { href: "/contact", label: "Kontakt" },
 ];
 
 export default function Navbar() {
@@ -48,7 +48,7 @@ export default function Navbar() {
         <button
           className="md:hidden text-[var(--foreground)] focus:outline-none"
           onClick={() => setOpen(!open)}
-          aria-label="Toggle menu"
+          aria-label="Skift menu"
         >
           {open ? <FiX size={24} /> : <FiMenu size={24} />}
         </button>
