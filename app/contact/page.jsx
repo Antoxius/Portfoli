@@ -7,17 +7,17 @@ import { FiMail, FiSend, FiCheckCircle, FiAlertCircle } from "react-icons/fi";
 const contactSchema = z.object({
   name: z
     .string()
-    .min(2, "Name must be at least 2 characters")
-    .max(80, "Name is too long"),
-  email: z.string().email("Please enter a valid email address"),
+    .min(2, "Navn skal være mindst 2 tegn")
+    .max(80, "Navn er for langt"),
+  email: z.string().email("Indtast venligst en gyldig e-mailadresse"),
   subject: z
     .string()
-    .min(4, "Subject must be at least 4 characters")
-    .max(120, "Subject is too long"),
+    .min(4, "Emne skal være mindst 4 tegn")
+    .max(120, "Emne er for langt"),
   message: z
     .string()
-    .min(20, "Message must be at least 20 characters")
-    .max(2000, "Message is too long (max 2000 characters)"),
+    .min(20, "Besked skal være mindst 20 tegn")
+    .max(2000, "Besked er for lang (maks. 2000 tegn)"),
 });
 
 export default function ContactPage() {
@@ -68,18 +68,18 @@ export default function ContactPage() {
     <div className="max-w-2xl mx-auto px-4 py-16">
       <div className="flex items-center gap-3 mb-4">
         <FiMail className="text-[var(--accent)]" size={24} />
-        <h1 className="text-3xl font-bold">Contact Me</h1>
+        <h1 className="text-3xl font-bold">Kontakt mig</h1>
       </div>
       <p className="text-slate-400 mb-10">
-        Have a project in mind or just want to say hi? Fill in the form and
-        I&apos;ll get back to you as soon as possible.
+        Har du et projekt i tankerne eller vil du bare sige hej? Udfyld
+        formularen, så vender jeg tilbage hurtigst muligt.
       </p>
 
       {status === "success" && (
         <div className="flex items-center gap-3 p-4 mb-8 rounded-lg bg-green-900/30 border border-green-700 text-green-400">
           <FiCheckCircle size={20} />
           <span>
-            Your message has been sent! I&apos;ll be in touch soon.
+            Din besked er sendt! Jeg vender tilbage snarest.
           </span>
         </div>
       )}
@@ -87,7 +87,7 @@ export default function ContactPage() {
       {status === "error" && (
         <div className="flex items-center gap-3 p-4 mb-8 rounded-lg bg-red-900/30 border border-red-700 text-red-400">
           <FiAlertCircle size={20} />
-          <span>Something went wrong. Please try again.</span>
+          <span>Noget gik galt. Prøv venligst igen.</span>
         </div>
       )}
 
@@ -98,7 +98,7 @@ export default function ContactPage() {
             htmlFor="name"
             className="block text-sm font-medium text-slate-300 mb-1.5"
           >
-            Name
+            Navn
           </label>
           <input
             id="name"
@@ -107,7 +107,7 @@ export default function ContactPage() {
             autoComplete="name"
             value={form.name}
             onChange={handleChange}
-            placeholder="Jane Doe"
+            placeholder="Peter Jensen"
             className={`w-full px-4 py-3 rounded-lg bg-[var(--card-bg)] border text-[var(--foreground)] placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-[var(--accent)] transition ${
               errors.name ? "border-red-500" : "border-[var(--border)]"
             }`}
@@ -123,7 +123,7 @@ export default function ContactPage() {
             htmlFor="email"
             className="block text-sm font-medium text-slate-300 mb-1.5"
           >
-            Email
+            E-mail
           </label>
           <input
             id="email"
@@ -148,7 +148,7 @@ export default function ContactPage() {
             htmlFor="subject"
             className="block text-sm font-medium text-slate-300 mb-1.5"
           >
-            Subject
+            Emne
           </label>
           <input
             id="subject"
@@ -156,7 +156,7 @@ export default function ContactPage() {
             type="text"
             value={form.subject}
             onChange={handleChange}
-            placeholder="Project inquiry"
+            placeholder="Projektforespørgsel"
             className={`w-full px-4 py-3 rounded-lg bg-[var(--card-bg)] border text-[var(--foreground)] placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-[var(--accent)] transition ${
               errors.subject ? "border-red-500" : "border-[var(--border)]"
             }`}
@@ -172,7 +172,7 @@ export default function ContactPage() {
             htmlFor="message"
             className="block text-sm font-medium text-slate-300 mb-1.5"
           >
-            Message
+            Besked
           </label>
           <textarea
             id="message"
@@ -180,7 +180,7 @@ export default function ContactPage() {
             rows={6}
             value={form.message}
             onChange={handleChange}
-            placeholder="Tell me about your project..."
+            placeholder="Fortæl mig om dit projekt..."
             className={`w-full px-4 py-3 rounded-lg bg-[var(--card-bg)] border text-[var(--foreground)] placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-[var(--accent)] transition resize-none ${
               errors.message ? "border-red-500" : "border-[var(--border)]"
             }`}
@@ -198,12 +198,12 @@ export default function ContactPage() {
           {loading ? (
             <>
               <span className="animate-spin rounded-full h-4 w-4 border-2 border-white border-t-transparent" />
-              Sending…
+              Sender…
             </>
           ) : (
             <>
               <FiSend size={16} />
-              Send Message
+              Send besked
             </>
           )}
         </button>

@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="bg-[var(--card-bg)] border-t border-[var(--border)] py-6 mt-16">
       <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
         <p className="text-sm text-slate-400">
-          © {year} Xenius Tolderlund. All rights reserved.
+          © {year} Xenius Tolderlund. Alle rettigheder forbeholdes.
         </p>
         <div className="flex gap-4">
           <a

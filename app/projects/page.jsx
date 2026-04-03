@@ -2,50 +2,50 @@ import { FiBriefcase, FiExternalLink, FiGithub } from "react-icons/fi";
 
 const projects = [
   {
-    title: "Portfolio Website",
+    title: "Portfolio-hjemmeside",
     description:
-      "This very portfolio – built with Next.js App Router, TailwindCSS, React Icons, and Zod for contact-form validation.",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Zod"],
+      "Dette portfolio – bygget med Next.js App Router, TailwindCSS, React Icons og Zod til validering af kontaktformularen.",
+    tags: ["Next.js", "JavaScript", "Tailwind CSS", "Zod"],
     github: "https://github.com/Antoxius/Portfoli",
     live: "/",
   },
   {
-    title: "Task Manager API",
+    title: "Opgavehåndtering API",
     description:
-      "A RESTful API for managing tasks and projects with user authentication, built with Node.js, Express, and PostgreSQL.",
+      "En RESTful API til håndtering af opgaver og projekter med brugerautentificering, bygget med Node.js, Express og PostgreSQL.",
     tags: ["Node.js", "Express", "PostgreSQL", "JWT"],
     github: "https://github.com/Antoxius",
     live: null,
   },
   {
-    title: "E-Commerce Store",
+    title: "E-handelbutik",
     description:
-      "A full-stack e-commerce application with product listings, shopping cart, and Stripe payment integration.",
+      "En e-handelsapplikation med produktoversigt, indkøbskurv og Stripe-betalingsintegration.",
     tags: ["React", "Next.js", "Stripe", "Prisma"],
     github: "https://github.com/Antoxius",
     live: null,
   },
   {
-    title: "Real-Time Chat App",
+    title: "Realtids-chatapplikation",
     description:
-      "A real-time chat application with rooms, private messages, and emoji support using Socket.io.",
+      "En realtids-chatapplikation med rum, private beskeder og emoji-support ved hjælp af Socket.io.",
     tags: ["React", "Socket.io", "Node.js", "MongoDB"],
     github: "https://github.com/Antoxius",
     live: null,
   },
   {
-    title: "Weather Dashboard",
+    title: "Vejr-dashboard",
     description:
-      "A weather dashboard fetching real-time data from OpenWeatherMap API with a clean, responsive UI.",
-    tags: ["React", "TypeScript", "API Integration"],
+      "Et vejr-dashboard der henter realtidsdata fra OpenWeatherMap API med en ren og responsiv brugergrænseflade.",
+    tags: ["React", "JavaScript", "API Integration"],
     github: "https://github.com/Antoxius",
     live: null,
   },
   {
-    title: "CLI Dev Tools",
+    title: "CLI Udviklingsværktøjer",
     description:
-      "A collection of developer productivity command-line tools written in TypeScript for automating common tasks.",
-    tags: ["TypeScript", "Node.js", "CLI"],
+      "En samling kommandolinjeværktøjer til udviklerproduktivitet skrevet i JavaScript til automatisering af almindelige opgaver.",
+    tags: ["JavaScript", "Node.js", "CLI"],
     github: "https://github.com/Antoxius",
     live: null,
   },
@@ -56,11 +56,11 @@ export default function ProjectsPage() {
     <div className="max-w-6xl mx-auto px-4 py-16">
       <div className="flex items-center gap-3 mb-4">
         <FiBriefcase className="text-[var(--accent)]" size={24} />
-        <h1 className="text-3xl font-bold">Projects</h1>
+        <h1 className="text-3xl font-bold">Projekter</h1>
       </div>
       <p className="text-slate-400 mb-12 max-w-2xl">
-        A selection of projects that demonstrate my skills. Each one is built
-        with a focus on clean architecture and reliable code.
+        Et udvalg af projekter, der viser mine færdigheder. Hvert projekt er
+        bygget med fokus på ren arkitektur og pålidelig kode.
       </p>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -96,7 +96,7 @@ export default function ProjectsPage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 text-sm text-slate-400 hover:text-[var(--accent)] transition-colors"
               >
-                <FiGithub size={16} /> Code
+                <FiGithub size={16} /> Kode
               </a>
               {project.live && (
                 <a

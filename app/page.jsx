@@ -7,7 +7,7 @@ import {
   FiArrowRight,
 } from "react-icons/fi";
 import {
-  SiTypescript,
+  SiJavascript,
   SiReact,
   SiNextdotjs,
   SiTailwindcss,
@@ -16,7 +16,7 @@ import {
 } from "react-icons/si";
 
 const skills = [
-  { icon: SiTypescript, label: "TypeScript", color: "text-blue-400" },
+  { icon: SiJavascript, label: "JavaScript", color: "text-yellow-400" },
   { icon: SiReact, label: "React", color: "text-cyan-400" },
   { icon: SiNextdotjs, label: "Next.js", color: "text-white" },
   { icon: SiTailwindcss, label: "Tailwind CSS", color: "text-teal-400" },
@@ -30,17 +30,17 @@ export default function Home() {
       {/* Hero */}
       <section className="max-w-6xl mx-auto px-4 pt-24 pb-16 flex flex-col items-start gap-6">
         <span className="text-sm font-semibold tracking-widest text-[var(--accent)] uppercase">
-          Hello, I&apos;m
+          Hej, jeg er
         </span>
         <h1 className="text-5xl md:text-7xl font-extrabold leading-tight">
           Xenius <span className="text-[var(--accent)]">Tolderlund</span>
         </h1>
         <p className="text-xl md:text-2xl text-slate-400 max-w-2xl">
-          A newly graduated front-end developer passionate about building{" "}
+          Nyuddannet frontend-udvikler med passion for at bygge{" "}
           <span className="text-[var(--foreground)] font-semibold">
-            clean and engaging
+            rene og engagerende
           </span>{" "}
-          web experiences.
+          weboplevelser.
         </p>
 
         <div className="flex flex-wrap gap-4 mt-2">
@@ -48,13 +48,13 @@ export default function Home() {
             href="/projects"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white font-semibold transition-colors"
           >
-            View Projects <FiArrowRight />
+            Se projekter <FiArrowRight />
           </Link>
           <Link
             href="/contact"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-[var(--border)] hover:border-[var(--accent)] text-[var(--foreground)] font-semibold transition-colors"
           >
-            Contact Me <FiMail />
+            Kontakt mig <FiMail />
           </Link>
         </div>
 
@@ -84,7 +84,7 @@ export default function Home() {
       <section className="max-w-6xl mx-auto px-4 py-16 border-t border-[var(--border)]">
         <div className="flex items-center gap-3 mb-10">
           <FiCode className="text-[var(--accent)]" size={24} />
-          <h2 className="text-2xl font-bold">Tech Stack</h2>
+          <h2 className="text-2xl font-bold">Teknologier</h2>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
           {skills.map(({ icon: Icon, label, color }) => (
