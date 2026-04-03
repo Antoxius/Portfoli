@@ -1,6 +1,6 @@
 import { FiUser, FiDownload } from "react-icons/fi";
 import {
-  SiTypescript,
+  SiJavascript,
   SiReact,
   SiNextdotjs,
   SiTailwindcss,
@@ -11,7 +11,7 @@ import {
 } from "react-icons/si";
 
 const techStack = [
-  { icon: SiTypescript, label: "TypeScript" },
+  { icon: SiJavascript, label: "JavaScript" },
   { icon: SiReact, label: "React" },
   { icon: SiNextdotjs, label: "Next.js" },
   { icon: SiTailwindcss, label: "Tailwind CSS" },

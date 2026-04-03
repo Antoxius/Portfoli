@@ -7,7 +7,7 @@ import {
   FiArrowRight,
 } from "react-icons/fi";
 import {
-  SiTypescript,
+  SiJavascript,
   SiReact,
   SiNextdotjs,
   SiTailwindcss,
@@ -16,7 +16,7 @@ import {
 } from "react-icons/si";
 
 const skills = [
-  { icon: SiTypescript, label: "TypeScript", color: "text-blue-400" },
+  { icon: SiJavascript, label: "JavaScript", color: "text-yellow-400" },
   { icon: SiReact, label: "React", color: "text-cyan-400" },
   { icon: SiNextdotjs, label: "Next.js", color: "text-white" },
   { icon: SiTailwindcss, label: "Tailwind CSS", color: "text-teal-400" },
