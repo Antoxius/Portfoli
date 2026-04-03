@@ -57,11 +57,28 @@ export default function ContactPage() {
     setErrors({});
     setLoading(true);
 
-    // Simulate async submission (replace with real API call)
-    await new Promise((res) => setTimeout(res, 1200));
-    setLoading(false);
-    setStatus("success");
-    setForm({ name: "", email: "", subject: "", message: "" });
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      const data = await res.json();
+
+      if (res.ok && data.success) {
+        setStatus("success");
+        setForm({ name: "", email: "", subject: "", message: "" });
+      } else if (data.errors) {
+        setErrors(data.errors);
+        setStatus("idle");
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (

@@ -1,55 +1,5 @@
 import { FiBriefcase, FiExternalLink, FiGithub } from "react-icons/fi";
-
-const projects = [
-  {
-    title: "Portfolio-hjemmeside",
-    description:
-      "Dette portfolio – bygget med Next.js App Router, TailwindCSS, React Icons og Zod til validering af kontaktformularen.",
-    tags: ["Next.js", "JavaScript", "Tailwind CSS", "Zod"],
-    github: "https://github.com/Antoxius/Portfoli",
-    live: "/",
-  },
-  {
-    title: "Opgavehåndtering API",
-    description:
-      "En RESTful API til håndtering af opgaver og projekter med brugerautentificering, bygget med Node.js, Express og PostgreSQL.",
-    tags: ["Node.js", "Express", "PostgreSQL", "JWT"],
-    github: "https://github.com/Antoxius",
-    live: null,
-  },
-  {
-    title: "E-handelbutik",
-    description:
-      "En e-handelsapplikation med produktoversigt, indkøbskurv og Stripe-betalingsintegration.",
-    tags: ["React", "Next.js", "Stripe", "Prisma"],
-    github: "https://github.com/Antoxius",
-    live: null,
-  },
-  {
-    title: "Realtids-chatapplikation",
-    description:
-      "En realtids-chatapplikation med rum, private beskeder og emoji-support ved hjælp af Socket.io.",
-    tags: ["React", "Socket.io", "Node.js", "MongoDB"],
-    github: "https://github.com/Antoxius",
-    live: null,
-  },
-  {
-    title: "Vejr-dashboard",
-    description:
-      "Et vejr-dashboard der henter realtidsdata fra OpenWeatherMap API med en ren og responsiv brugergrænseflade.",
-    tags: ["React", "JavaScript", "API Integration"],
-    github: "https://github.com/Antoxius",
-    live: null,
-  },
-  {
-    title: "CLI Udviklingsværktøjer",
-    description:
-      "En samling kommandolinjeværktøjer til udviklerproduktivitet skrevet i JavaScript til automatisering af almindelige opgaver.",
-    tags: ["JavaScript", "Node.js", "CLI"],
-    github: "https://github.com/Antoxius",
-    live: null,
-  },
-];
+import { projects } from "@/lib/projects-data";
 
 export default function ProjectsPage() {
   return (
