@@ -1,6 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
-import { fetchPortfolioContent } from "@/lib/portfolio-api";
+import { homeContent } from "@/lib/home-content";
 import {
   FiGithub,
   FiLinkedin,
@@ -36,24 +35,10 @@ function renderContentItem(item) {
     );
   }
 
-  if (item.type === "image" && item.imagePath) {
-    return (
-      <Image
-        src={`${process.env.PORTFOLIO_API_BASE_URL || "http://localhost:4000"}${item.imagePath}`}
-        alt={item.imageAlt || item.title}
-        width={800}
-        height={480}
-        className="mt-4 h-48 w-full rounded-lg object-cover"
-      />
-    );
-  }
-
   return <p className="mt-4 text-sm leading-relaxed text-slate-400">{item.body}</p>;
 }
 
-export default async function Home() {
-  const contentItems = await fetchPortfolioContent();
-
+export default function Home() {
   return (
     <>
       {/* Hero */}
@@ -131,39 +116,33 @@ export default async function Home() {
       <section className="max-w-6xl mx-auto px-4 py-16 border-t border-[var(--border)]">
         <div className="flex items-center gap-3 mb-4">
           <FiDatabase className="text-[var(--accent)]" size={24} />
-          <h2 className="text-2xl font-bold">Indhold fra API</h2>
+          <h2 className="text-2xl font-bold">Udvalgt Arbejde</h2>
         </div>
         <p className="mb-10 max-w-2xl text-slate-400">
-          Forsiden henter nu dynamisk portfolio-indhold fra din nye backend.
+          Et kort indblik i, hvordan jeg bygger moderne webloesninger med fokus paa enkel deployment og stabil drift.
         </p>
 
-        {contentItems.length === 0 ? (
-          <div className="rounded-xl border border-dashed border-[var(--border)] bg-[var(--card-bg)] p-6 text-slate-400">
-            API&apos;et er forbundet, men der er endnu ikke indhold at vise. Opret tekst-, kode- eller billedindhold via admin-endpoints.
-          </div>
-        ) : (
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {contentItems.slice(0, 6).map((item) => (
-              <article
-                key={item.id}
-                className="rounded-xl border border-[var(--border)] bg-[var(--card-bg)] p-6"
-              >
-                <div className="flex items-center justify-between gap-3">
-                  <h3 className="text-lg font-semibold text-white">{item.title}</h3>
-                  <span className="rounded-full border border-[var(--border)] px-2.5 py-1 text-xs uppercase tracking-wide text-slate-400">
-                    {item.type}
-                  </span>
-                </div>
-                {item.language && (
-                  <p className="mt-2 text-xs font-semibold uppercase tracking-wide text-[var(--accent)]">
-                    {item.language}
-                  </p>
-                )}
-                {renderContentItem(item)}
-              </article>
-            ))}
-          </div>
-        )}
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {homeContent.map((item) => (
+            <article
+              key={item.id}
+              className="rounded-xl border border-[var(--border)] bg-[var(--card-bg)] p-6"
+            >
+              <div className="flex items-center justify-between gap-3">
+                <h3 className="text-lg font-semibold text-white">{item.title}</h3>
+                <span className="rounded-full border border-[var(--border)] px-2.5 py-1 text-xs uppercase tracking-wide text-slate-400">
+                  {item.type}
+                </span>
+              </div>
+              {item.language && (
+                <p className="mt-2 text-xs font-semibold uppercase tracking-wide text-[var(--accent)]">
+                  {item.language}
+                </p>
+              )}
+              {renderContentItem(item)}
+            </article>
+          ))}
+        </div>
       </section>
     </>
   );
