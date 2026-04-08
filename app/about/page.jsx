@@ -84,19 +84,13 @@ export default function AboutPage() {
             {
               year: "2024 – Nu",
               title: "Frontend-udvikler",
-              org: "Freelance",
+              org: "Freelance / ledig",
               desc: "Bygger responsive hjemmesider og UI-komponenter til kunder ved hjælp af React, Next.js og Tailwind CSS.",
-            },
-            {
-              year: "2023 – 2024",
-              title: "Frontend-praktik",
-              org: "Webbureau",
-              desc: "Hjalp med at udvikle og vedligeholde kunders hjemmesider med fokus på HTML, CSS, JavaScript og React.",
             },
             {
               year: "2021 – 2024",
               title: "Frontend-uddannelse",
-              org: "Universitet",
+              org: "Roskilde Tekniske Skole",
               desc: "Dimitterede med en uddannelse med fokus på webudvikling, UI/UX-principper og moderne JavaScript-rammeværktøjer.",
             },
           ].map(({ year, title, org, desc }) => (

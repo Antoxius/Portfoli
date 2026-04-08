@@ -28,7 +28,7 @@ export default function Footer() {
             <FiLinkedin size={20} />
           </a>
           <a
-            href="mailto:xenius@example.com"
+            href="/contact"
             aria-label="E-mail"
             className="text-slate-400 hover:text-[var(--accent)] transition-colors"
           >
