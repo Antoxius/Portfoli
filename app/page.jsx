@@ -6,7 +6,7 @@ import {
   FiMail,
   FiCode,
   FiArrowRight,
-  FiDatabase,
+  FiStar,
 } from "react-icons/fi";
 import {
   SiJavascript,
@@ -115,7 +115,7 @@ export default function Home() {
 
       <section className="max-w-6xl mx-auto px-4 py-16 border-t border-[var(--border)]">
         <div className="flex items-center gap-3 mb-4">
-          <FiDatabase className="text-[var(--accent)]" size={24} />
+          <FiStar className="text-[var(--accent)]" size={24} />
           <h2 className="text-2xl font-bold">Udvalgt Arbejde</h2>
         </div>
         <p className="mb-10 max-w-2xl text-slate-400">

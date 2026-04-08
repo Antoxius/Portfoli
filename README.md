@@ -25,7 +25,6 @@ The contact page posts to the Next route at `/api/contact`.
 - The route sends the message directly as an email from the Next.js server.
 - The route enforces a same-origin or `ALLOWED_ORIGIN` check.
 - The built-in rate limit is a lightweight in-memory guard for basic abuse, not a distributed production-grade limiter.
-- The home page content now lives inside this project, so no separate content API is required.
 
 `CONTACT_FROM_EMAIL` can use `onboarding@resend.dev` for testing, but for production you should verify your own domain in Resend and send from that domain.
 
