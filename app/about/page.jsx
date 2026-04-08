@@ -16,9 +16,7 @@ const techStack = [
   { icon: SiNextdotjs, label: "Next.js" },
   { icon: SiTailwindcss, label: "Tailwind CSS" },
   { icon: SiNodedotjs, label: "Node.js" },
-  { icon: SiPostgresql, label: "PostgreSQL" },
   { icon: SiGit, label: "Git" },
-  { icon: SiDocker, label: "Docker" },
 ];
 
 export default function AboutPage() {
