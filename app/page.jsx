@@ -6,6 +6,7 @@ import {
   FiMail,
   FiCode,
   FiArrowRight,
+  FiDownload,
   FiStar,
 } from "react-icons/fi";
 import {
@@ -64,6 +65,13 @@ export default function Home() {
           >
             Se projekter <FiArrowRight />
           </Link>
+          <a
+            href="/Xenius_Tolderlund_CV.pdf"
+            download
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-[var(--border)] hover:border-[var(--accent)] text-[var(--foreground)] font-semibold transition-colors"
+          >
+            Download CV <FiDownload />
+          </a>
           <Link
             href="/contact"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-[var(--border)] hover:border-[var(--accent)] text-[var(--foreground)] font-semibold transition-colors"

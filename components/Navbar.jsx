@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { FiMenu, FiX } from "react-icons/fi";
+import { FiDownload, FiMenu, FiX } from "react-icons/fi";
 
 const navLinks = [
   { href: "/", label: "Hjem" },
@@ -27,7 +27,16 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop links */}
-        <ul className="hidden md:flex gap-6">
+        <div className="hidden md:flex items-center gap-6">
+          <a
+            href="/Xenius_Tolderlund_CV.pdf"
+            download
+            className="inline-flex items-center gap-2 rounded-lg border border-[var(--border)] px-3 py-2 text-sm font-medium text-[var(--foreground)] transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
+          >
+            <FiDownload size={16} />
+            Download CV
+          </a>
+          <ul className="flex gap-6">
           {navLinks.map(({ href, label }) => (
             <li key={href}>
               <Link
@@ -42,7 +51,8 @@ export default function Navbar() {
               </Link>
             </li>
           ))}
-        </ul>
+          </ul>
+        </div>
 
         {/* Mobile hamburger */}
         <button
@@ -58,6 +68,16 @@ export default function Navbar() {
       {open && (
         <div className="md:hidden bg-[var(--card-bg)] border-t border-[var(--border)] px-4 pb-4">
           <ul className="flex flex-col gap-4 pt-4">
+            <li>
+              <a
+                href="/Xenius_Tolderlund_CV.pdf"
+                download
+                className="inline-flex items-center gap-2 text-sm font-medium text-[var(--foreground)] transition-colors hover:text-[var(--accent)]"
+              >
+                <FiDownload size={16} />
+                Download CV
+              </a>
+            </li>
             {navLinks.map(({ href, label }) => (
               <li key={href}>
                 <Link
