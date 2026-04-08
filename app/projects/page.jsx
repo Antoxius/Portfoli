@@ -55,7 +55,7 @@ export default function ProjectsPage() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 text-sm text-slate-400 hover:text-[var(--accent)] transition-colors"
                 >
-                  <FiExternalLink size={16} /> Live Demo
+                  <FiExternalLink size={16} /> Se live
                 </a>
               )}
             </div>

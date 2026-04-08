@@ -29,7 +29,7 @@ export default function Footer() {
           </a>
           <a
             href="mailto:xenius@example.com"
-            aria-label="Email"
+            aria-label="E-mail"
             className="text-slate-400 hover:text-[var(--accent)] transition-colors"
           >
             <FiMail size={20} />

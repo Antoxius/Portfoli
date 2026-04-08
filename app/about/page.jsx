@@ -45,15 +45,16 @@ export default function AboutPage() {
           </p>
           <p>
             Når jeg ikke koder, bruger jeg tiden på at udforske nye frontend-
-            værktøjer og frameworks, arbejde på personlige projekter eller nyde
+            værktøjer og rammeværktøjer, arbejde på personlige projekter eller nyde
             en god kop kaffe.
           </p>
           <a
-            href="/cv.pdf"
+            href="/Xenius_Tolderlund_CV.pdf"
+            download
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white font-semibold transition-colors text-sm"
           >
             <FiDownload size={16} />
-            Download CV
+            Hent cv
           </a>
         </div>
 
@@ -98,7 +99,7 @@ export default function AboutPage() {
               year: "2021 – 2024",
               title: "Frontend-uddannelse",
               org: "Universitet",
-              desc: "Dimitterede med en uddannelse med fokus på webudvikling, UI/UX-principper og moderne JavaScript-frameworks.",
+              desc: "Dimitterede med en uddannelse med fokus på webudvikling, UI/UX-principper og moderne JavaScript-rammeværktøjer.",
             },
           ].map(({ year, title, org, desc }) => (
             <li key={year} className="ml-6">

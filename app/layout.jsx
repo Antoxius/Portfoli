@@ -3,9 +3,9 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "Xenius Tolderlund | Portfolio",
+  title: "Xenius Tolderlund | Portefolje",
   description:
-    "Portfolio for Xenius Tolderlund – nyuddannet frontend-udvikler.",
+    "Portefolje for Xenius Tolderlund – nyuddannet frontend-udvikler.",
 };
 
 export default function RootLayout({ children }) {

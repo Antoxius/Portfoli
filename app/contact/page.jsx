@@ -192,7 +192,7 @@ export default function ContactPage() {
         {/* Message */}
         <div>
           <label className="sr-only" htmlFor="honeypot">
-            Lad dette felt vaere tomt
+            Lad dette felt være tomt
           </label>
           <input
             id="honeypot"

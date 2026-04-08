@@ -34,7 +34,7 @@ export default function Navbar() {
             className="inline-flex items-center gap-2 rounded-lg border border-[var(--border)] px-3 py-2 text-sm font-medium text-[var(--foreground)] transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
           >
             <FiDownload size={16} />
-            Download CV
+            Hent cv
           </a>
           <ul className="flex gap-6">
           {navLinks.map(({ href, label }) => (
@@ -75,7 +75,7 @@ export default function Navbar() {
                 className="inline-flex items-center gap-2 text-sm font-medium text-[var(--foreground)] transition-colors hover:text-[var(--accent)]"
               >
                 <FiDownload size={16} />
-                Download CV
+                Hent cv
               </a>
             </li>
             {navLinks.map(({ href, label }) => (

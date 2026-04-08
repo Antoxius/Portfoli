@@ -28,7 +28,7 @@ const skills = [
 ];
 
 function renderContentItem(item) {
-  if (item.type === "code") {
+  if (item.type === "kode") {
     return (
       <pre className="mt-4 overflow-x-auto rounded-lg bg-[#111827] p-4 text-xs text-slate-200">
         <code>{item.body}</code>
@@ -70,7 +70,7 @@ export default function Home() {
             download
             className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-[var(--border)] hover:border-[var(--accent)] text-[var(--foreground)] font-semibold transition-colors"
           >
-            Download CV <FiDownload />
+            Hent cv <FiDownload />
           </a>
           <Link
             href="/contact"
@@ -127,7 +127,7 @@ export default function Home() {
           <h2 className="text-2xl font-bold">Udvalgt Arbejde</h2>
         </div>
         <p className="mb-10 max-w-2xl text-slate-400">
-          Et kort indblik i, hvordan jeg bygger moderne webloesninger med fokus paa enkel deployment og stabil drift.
+          Et kort indblik i, hvordan jeg bygger moderne webløsninger med fokus på enkel udrulning og stabil drift.
         </p>
 
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">

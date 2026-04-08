@@ -159,7 +159,7 @@ async function sendContactEmail(payload) {
     ].join("\n"),
     html: `
       <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #111827;">
-        <h2>Ny besked fra portfolio</h2>
+        <h2>Ny besked fra portefoljen</h2>
         <p><strong>Navn:</strong> ${safeName}</p>
         <p><strong>Email:</strong> ${safeEmail}</p>
         <p><strong>Emne:</strong> ${safeSubject}</p>
@@ -193,7 +193,7 @@ export async function POST(request) {
     return NextResponse.json(
       {
         success: false,
-        message: "For mange forespoergsler. Proev igen om lidt.",
+        message: "For mange forespørgsler. Prøv igen om lidt.",
       },
       {
         status: 429,
@@ -251,7 +251,7 @@ export async function POST(request) {
       {
         success: false,
         message:
-          "Kontaktformularen er ikke konfigureret til email endnu. Tilfoej RESEND_API_KEY, CONTACT_TO_EMAIL og CONTACT_FROM_EMAIL i miljoevariabler.",
+          "Kontaktformularen er ikke konfigureret til email endnu. Tilføj RESEND_API_KEY, CONTACT_TO_EMAIL og CONTACT_FROM_EMAIL i miljøvariabler.",
       },
       { status: 500 }
     );
